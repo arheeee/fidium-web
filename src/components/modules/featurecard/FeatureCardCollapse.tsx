@@ -1,10 +1,16 @@
 "use client"
+import { Collapse, List, ListItemButton, ListItemText, Typography } from "@mui/material";
 import { useState } from "react"
-import { LuChevronDown } from "react-icons/lu";
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 const FeatureCardCollapse = ({
+  closeText,
+  openText,
   children,
 }: Readonly<{
+  closeText: string;
+  openText: string;
   children: React.ReactNode;
 }>) => {
 
@@ -15,17 +21,20 @@ const FeatureCardCollapse = ({
   }
 
   return (
-    <div className="collapse">
-      <input type="checkbox" className="peer" checked={isChecked} onChange={handleClick} />
-      <div
-        className="collapse-title">
-        <div className="flex items-center gap-4 text-blue-800 font-bold"><div>{!isChecked ? "See Features" : "Close Features"}</div> <LuChevronDown /></div>
-      </div>
-      <div
-        className="collapse-content">
-       { children }
-      </div>
-    </div>
+    <List
+      className="w-full"
+      component="nav"
+    >
+      <ListItemButton onClick={handleClick}>
+        <ListItemText className="text-blue-800 !font-bold" primary={<><Typography sx={{ fontWeight: 'bold', display: 'flex'}}>{!isChecked ? openText : closeText}{isChecked ? <ExpandLess  className="text-blue-800 !font-bold" /> : <ExpandMore  className="text-blue-800 !font-bold" />}</Typography> </>}  />
+        
+      </ListItemButton>
+      <Collapse in={isChecked} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+            { children }
+        </List>
+      </Collapse>
+    </List>
   )
 }
 

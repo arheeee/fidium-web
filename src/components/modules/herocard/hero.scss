@@ -1,0 +1,44 @@
+.hero__section{
+    @apply bg-white relative w-full flex flex-col;
+    .hero__container{
+        @apply relative min-h-[500px] xsm:min-h-[600px] w-full flex justify-center items-end;
+        .hero__background {
+            @apply pointer-events-none z-0 absolute top-0 left-0 w-full h-full;
+          
+            .hero__image, .hero__mobile-image {
+              @apply object-cover object-center w-full h-full;
+            }
+          
+            .hero__image {
+              @apply block;
+            }
+          
+            .hero__mobile-image {
+              @apply hidden;
+            }
+          
+            &.hero__has-mobile-bg {
+              .hero__image {
+                @apply hidden xsm:block;
+              }
+          
+              .hero__mobile-image {
+                @apply block xsm:hidden;
+              }
+            }
+        }
+        .hero__content{
+            @apply xsm:mb-16 z-[1] text-white p-6 w-full max-w-contain;
+            .hero__copy-wrap{
+                @apply max-w-[390px] mb-0 xsm:mb-28;
+                .hero__header{
+                    @apply text-[1.8rem] leading-8 xsm:text-[2.3rem] font-medium xsm:leading-10 mb-4;
+                }
+                .hero__subtitle{
+                    @apply text-base xsm:text-[1.2rem] font-medium;
+                }
+            } 
+        }
+    }
+    
+}

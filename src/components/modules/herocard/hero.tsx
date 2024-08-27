@@ -1,4 +1,5 @@
 import React from 'react';
+import './hero.scss';
 import Image from 'next/image';
 import { HeroBlock } from '@/types/types';
 import { getImageUrl } from '@lib/imageUrl';

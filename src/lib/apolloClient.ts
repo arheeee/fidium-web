@@ -1,13 +1,8 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-/* 
-  This is the Apollo configuration file for connecting to craftcms GraphQL api endpoint
-  Update or confirm your url paths in the .env to fetch data appropriately
-*/
-
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_CRAFT_CMS_URL
+  uri: process.env.NEXT_PUBLIC_CRAFT_CMS_URL,
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -17,13 +12,30 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : "",
-    }
-  }
+    },
+  };
 });
 
 const client = new ApolloClient({
+  ssrMode: typeof window === "undefined",
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          globalSets: {
+            // This custom policy forces the data to be re-fetched after 1 minute
+            read(existing, { args, toReference }) {
+              return existing;
+            },
+            merge(existing, incoming) {
+              return incoming;
+            },
+          },
+        },
+      },
+    },
+  }),
 });
 
 export default client;

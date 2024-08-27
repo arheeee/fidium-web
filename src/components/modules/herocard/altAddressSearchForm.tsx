@@ -1,4 +1,5 @@
 import React from 'react';
+import './altAddressSearchForm.scss';
 import Image from 'next/image';
 import { getImageUrl } from '@lib/imageUrl';
 import Button from '@mui/material/Button';

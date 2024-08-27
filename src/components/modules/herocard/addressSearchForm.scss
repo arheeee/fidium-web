@@ -1,0 +1,17 @@
+.address-search-form__form-wrapper{
+    @apply relative;
+    .address-search-form__icon{
+        @apply hidden xsm:block absolute left-[-7rem] m-auto top-0 bottom-0;
+    }
+    .address-search-form__form{
+        .address-search-form__form-container{
+            @apply px-6 py-3 xsm:p-0 relative;
+            .address-search-form__input-field{
+                @apply pl-2 pr-2 py-1 xsm:pr-[185px] hidden xsm:block bg-white w-full rounded;
+            }
+            .address-search-form__button{
+                @apply px-5 py-3 bg-brand-blue-500 text-sm capitalize flex w-full xsm:w-[auto] xsm:top-[0px] xsm:bottom-[0px] xsm:m-auto relative xsm:absolute xsm:right-[10px] self-center;
+            }
+        }
+    }
+}

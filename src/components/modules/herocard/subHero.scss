@@ -1,0 +1,59 @@
+.sub-hero__section{
+    @apply bg-white relative w-full flex flex-col p-6;
+    .sub-hero__wrapper{
+        @apply max-w-contain mx-auto;
+    
+        .sub-hero__container{
+            @apply overflow-hidden rounded-[20px] relative w-full grid grid-cols-1 sm:grid-cols-[1fr_40%] justify-center items-center;
+            
+            &.sub-hero__has-blue-bg{
+                @apply bg-brand-blue-gradient;
+                .sub-hero__content{
+                    @apply text-white;
+                }
+            }
+            &.sub-hero__has-yellow-bg{
+                @apply bg-brand-yellow-gradient;
+                .sub-hero__header{
+                    @apply text-brand-blue-500;
+                }
+                .sub-hero__subtitle{
+                    @apply text-black;
+                }
+            }
+            .sub-hero__background{
+                @apply px-6 pt-0 pb-6 sm:pt-0 sm:p-0 pointer-events-none z-0 w-full h-full;
+                .sub-hero__image, .sub-hero__mobile-image{
+                    @apply overflow-hidden rounded-[20px] object-cover object-center w-full h-full;
+                }
+                .sub-hero__image {
+                    @apply block;
+                }
+                .sub-hero__mobile-image {
+                    @apply hidden;
+                }
+                &.sub-hero__has-mobile-bg {
+                    .sub-hero__image {
+                    @apply hidden xsm:block;
+                    }
+                
+                    .sub-hero__mobile-image {
+                    @apply block xsm:hidden;
+                    }
+                }
+            }
+            .sub-hero__content{
+                @apply px-6 py-14 sm:px-14 sm:py-14 w-full max-w-[1024px];
+                .sub-hero__copy-wrap{
+                    @apply max-w-[390px] mb-0;
+                    .sub-hero__header{
+                        @apply text-[1.8rem] leading-8 xsm:text-[2.3rem] font-medium xsm:leading-10 mb-4;
+                    }
+                    .sub-hero__subtitle{
+                        @apply text-base xsm:text-[1.2rem] font-medium;
+                    }
+                } 
+            }
+        }
+    }
+}
