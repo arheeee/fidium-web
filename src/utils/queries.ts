@@ -105,37 +105,7 @@ export const getHomePageQuery = gql`
   }
 `;
 
-//footer
-export const getFooterQuery = gql`
-  query FooterQuery {
-  globalSets {
-    ... on footer_GlobalSet {
-      id
-      name
-      footerSocialItem {
-        ... on footerSocialItemSet_Entry {
-          id
-          footerSocialUrl
-          footerSocialOpenInNewtab
-        }
-      }
-      footerNavItem {
-        ... on footerNavItemSet_Entry {
-          id
-          footerOpenInNewTab
-          footerMenuUrl
-          footerMenuLabel
-        }
-      }
-      footerLegalLinks
-      footerDisclaimer
-      footerCopyright
-    }
-  }
-}
-`;
-
-export const TESTIMONIALS_QUERY = gql`
+export const getTestimonialsQuery = gql`
   query HomePageQuery {
     entries(section: "homePage") {
       ... on pageEditor_Entry {
@@ -274,7 +244,7 @@ export const getStaticCards = gql`
 `;
 
 // video cards
-export const GET_VIDEO_CARDS = gql`
+export const getVideoCardsQuery = gql`
   {
     entries(section: "homePage") {
       ... on pageEditor_Entry {

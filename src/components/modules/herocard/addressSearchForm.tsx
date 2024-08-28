@@ -1,10 +1,10 @@
-import React from 'react';
-import './addressSearchForm.scss';
-import Image from 'next/image';
-import { getImageUrl } from '@lib/imageUrl';
-import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import React from "react";
+import "./addressSearchForm.scss";
+import Image from "next/image";
+import { getImageUrl } from "@lib/imageUrl";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 interface AddressSearchFormProps {
   heroIcon: {
@@ -22,7 +22,7 @@ const AddressSearchForm: React.FC<AddressSearchFormProps> = ({
   heroButtonLabel,
 }) => {
   // Set the icon URL within the component
-  const iconUrl = heroIcon.length > 0 ? getImageUrl(heroIcon[0].url ?? '') : '';
+  const iconUrl = heroIcon.length > 0 ? getImageUrl(heroIcon[0].url ?? "") : "";
 
   return (
     <div className="address-search-form__form-wrapper">
@@ -39,21 +39,21 @@ const AddressSearchForm: React.FC<AddressSearchFormProps> = ({
         />
       )}
       <form className="address-search-form__form" noValidate autoComplete="off">
-        <FormControl className="address-search-form__form-container" sx={{ width: '100%' }}>
+        <FormControl
+          className="address-search-form__form-container"
+          sx={{ width: "100%" }}
+        >
           {heroFieldPlaceholder && (
-            <OutlinedInput 
-              placeholder={heroFieldPlaceholder} 
+            <OutlinedInput
+              placeholder={heroFieldPlaceholder}
               className="address-search-form__input-field"
             />
           )}
-          
+
           {heroButtonLabel && (
-            <Button 
-              className="address-search-form__button" 
-              variant="contained"
-            >
+            <Button className="address-search-form__button" variant="contained">
               {heroButtonLabel}
-            </Button> 
+            </Button>
           )}
         </FormControl>
       </form>

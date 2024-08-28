@@ -1,4 +1,4 @@
-import { ReactEventHandler } from 'react';
+import { ReactEventHandler } from "react";
 
 export interface IButtonprops {
   id: string;
@@ -29,7 +29,7 @@ export interface IButtonprops {
    * `small` is equivalent to the dense button styling.
    * @default 'medium'
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   /**
    * Element placed before the children.
    */
@@ -38,7 +38,7 @@ export interface IButtonprops {
    * The variant to use.
    * @default 'text'
    */
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: "primary" | "secondary" | "tertiary";
   /**
    * Is icon only button
    * @default false

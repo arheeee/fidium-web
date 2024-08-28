@@ -1,5 +1,5 @@
 "use client";
-import { TESTIMONIALS_QUERY } from "@/utils/queries";
+import { getTestimonialsQuery } from "@/utils/queries";
 import { useQuery } from "@apollo/client";
 import QuoteIcon from "@/components/icons/quote-icon";
 import { HomePageData } from "@/types/types";
@@ -10,7 +10,7 @@ import AwardSwiper from "@/components/testimonials/awardSwiper";
 import Video from "@/components/testimonials/video";
 
 export default function Testimonials() {
-  const { data, loading, error } = useQuery<HomePageData>(TESTIMONIALS_QUERY);
+  const { data, loading, error } = useQuery<HomePageData>(getTestimonialsQuery);
 
   // Perform checks and data handling to ensure data retrieval
   if (loading) return <p>Loading...</p>;

@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Download/clone the repo on your computer:
 
    ```bash
-   git clone https://github.com/arheeee/fidium-web.git
+   git clone https://galex.consolidated.com/procom-dev/fidium-web.git
    ```
 2. Run `npm install` within the clone
     ```bash 

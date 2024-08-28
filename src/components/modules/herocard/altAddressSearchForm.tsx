@@ -1,10 +1,10 @@
-import React from 'react';
-import './altAddressSearchForm.scss';
-import Image from 'next/image';
-import { getImageUrl } from '@lib/imageUrl';
-import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import React from "react";
+import "./altAddressSearchForm.scss";
+import Image from "next/image";
+import { getImageUrl } from "@lib/imageUrl";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 interface AltAddressSearchFormProps {
   subHeroIcon: {
@@ -22,8 +22,8 @@ const AltAddressSearchForm: React.FC<AltAddressSearchFormProps> = ({
   subHeroButtonLabel,
 }) => {
   // Set the icon URL within the component
-  const altIconUrl = subHeroIcon.length > 0 ? getImageUrl(subHeroIcon[0].url ?? '') : '';
-
+  const altIconUrl =
+    subHeroIcon.length > 0 ? getImageUrl(subHeroIcon[0].url ?? "") : "";
 
   return (
     <div className="alt-address-search-form__form-wrapper">
@@ -39,22 +39,29 @@ const AltAddressSearchForm: React.FC<AltAddressSearchFormProps> = ({
           priority
         />
       )}
-      <form className="alt-address-search-form__form" noValidate autoComplete="off">
-        <FormControl className="alt-address-search-form__form-container" sx={{ width: '100%' }}>
+      <form
+        className="alt-address-search-form__form"
+        noValidate
+        autoComplete="off"
+      >
+        <FormControl
+          className="alt-address-search-form__form-container"
+          sx={{ width: "100%" }}
+        >
           {subHeroFieldPlaceholder && (
-            <OutlinedInput 
-              placeholder={subHeroFieldPlaceholder} 
+            <OutlinedInput
+              placeholder={subHeroFieldPlaceholder}
               className="alt-address-search-form__input-field"
             />
           )}
-          
+
           {subHeroButtonLabel && (
-            <Button 
-              className="alt-address-search-form__button" 
+            <Button
+              className="alt-address-search-form__button"
               variant="contained"
             >
               {subHeroButtonLabel}
-            </Button> 
+            </Button>
           )}
         </FormControl>
       </form>

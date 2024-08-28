@@ -1,9 +1,15 @@
-import React from 'react';
-import sanitizeHtml from 'sanitize-html';
-import './footer.scss';
-import { FooterGlobal } from './footer.types';
-import LanguageIcon from '@mui/icons-material/Language';
-import { FacebookIcon, InstagramIcon, XIcon, YouTubeIcon } from '@/components/ui/icons/customIcons';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
+import sanitizeHtml from "sanitize-html";
+import "./footer.scss";
+import { FooterGlobal } from "./footer.types";
+import LanguageIcon from "@mui/icons-material/Language";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  XIcon,
+  YouTubeIcon,
+} from "@/components/ui/icons/customIcons";
 
 const iconMap: { [key: string]: React.ReactNode } = {
   facebook: <FacebookIcon />,
@@ -19,17 +25,17 @@ const Footer: React.FC<FooterGlobal> = ({
   footerLegalLinks,
   footerCopyright,
 }) => {
-  let sanitizedDisclaimer = '';
+  let sanitizedDisclaimer = "";
 
   try {
     sanitizedDisclaimer = sanitizeHtml(footerDisclaimer, {
-      allowedTags: ['b', 'i', 'em', 'strong', 'a', 'p'],
+      allowedTags: ["b", "i", "em", "strong", "a", "p"],
       allowedAttributes: {
-        a: ['href', 'target'],
+        a: ["href", "target"],
       },
     });
   } catch (error) {
-    console.error('Error sanitizing disclaimer content:', error);
+    console.error("Error sanitizing disclaimer content:", error);
   }
 
   return (
@@ -42,15 +48,17 @@ const Footer: React.FC<FooterGlobal> = ({
                 key={item.id}
                 href={item.footerMenuUrl}
                 className="footer__navigation-items-link"
-                target={item.footerOpenInNewTab ? '_blank' : '_self'}
-                rel={item.footerOpenInNewTab ? 'noopener noreferrer' : undefined}
+                target={item.footerOpenInNewTab ? "_blank" : "_self"}
+                rel={
+                  item.footerOpenInNewTab ? "noopener noreferrer" : undefined
+                }
               >
                 {item.footerMenuLabel}
               </a>
             ))}
           </div>
           <div className="footer__language-selector">
-            <a href="#" className="footer__language-selector-link">
+            <a href="" className="footer__language-selector-link">
               <LanguageIcon className="mr-1" />
               Español
             </a>
@@ -64,8 +72,12 @@ const Footer: React.FC<FooterGlobal> = ({
                 key={icon.id}
                 href={icon.footerSocialUrl}
                 className="footer__social-link"
-                target={icon.footerSocialOpenInNewTab ? '_blank' : '_self'}
-                rel={icon.footerSocialOpenInNewTab ? 'noopener noreferrer' : undefined}
+                target={icon.footerSocialOpenInNewTab ? "_blank" : "_self"}
+                rel={
+                  icon.footerSocialOpenInNewTab
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 aria-label={icon.footerSocialIcon}
               >
                 {IconComponent}
@@ -79,9 +91,7 @@ const Footer: React.FC<FooterGlobal> = ({
         <div className="footer__legal-links">
           <div dangerouslySetInnerHTML={{ __html: footerLegalLinks }} />
         </div>
-        <div className="footer__copyright">
-          {footerCopyright}
-        </div>
+        <div className="footer__copyright">{footerCopyright}</div>
       </div>
     </footer>
   );

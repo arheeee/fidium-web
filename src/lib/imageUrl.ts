@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_CRAFT_CMS_BASE_PATH || '';
+const baseUrl = process.env.NEXT_PUBLIC_CRAFT_CMS_BASE_PATH || "";
 
 /* 
   This lib resolves the urls for the images prepending the url from the craft side
@@ -6,6 +6,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_CRAFT_CMS_BASE_PATH || '';
 */
 
 export const getImageUrl = (url: string): string => {
-  if (!url) return '';
-  return url.startsWith('http') ? url : `${BASE_URL}${url}`;
+  if (!url) return "";
+  return url.startsWith("http") ? url : `${baseUrl}${url}`;
 };

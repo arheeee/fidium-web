@@ -15,7 +15,5 @@ const getStaticCardsEntries = async (): Promise<StaticCardsEntries> => {
 
 export default async function StaticCardsPage() {
   const staticCards = await getStaticCardsEntries();
-  return (
-    <StaticCards staticCards={staticCards} />
-  );
+  return <StaticCards staticCards={staticCards} />;
 }
