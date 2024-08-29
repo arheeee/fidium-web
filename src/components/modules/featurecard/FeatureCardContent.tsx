@@ -14,10 +14,10 @@ const FeatureCardContent = ({
   cardFeature: FeatureCardElem;
 }>) => {
   return (
-    <Card sx={{ padding: '30px'}} className='!rounded-3xl lg:!rounded-r-none lg:!rounded-l-3xl'>
+    <Card sx={{ padding: '30px'}} className='!rounded-3xl lg:!rounded-r-none lg:!rounded-l-3xl' key={cardFeature.id}>
       <CardContent>
         <div className="flex flex-col md:flex-row items-center gap-2">
-          <Image src={process.env.NEXT_PUBLIC_CRAFT_CMS_BASE_PATH + cardFeature.featureCardImage[0]?.url} width={172} height={172} alt="card image" />
+          <Image src={cardFeature.featureCardImage[0]?.url} width={172} height={172} alt="card image" />
           <FeatureCardEyebowHeader cardFeature={cardFeature} />
         </div>
         { cardFeature.featureCardContent ? <div className="my-5 text-center md:text-start" dangerouslySetInnerHTML={{ __html: cardFeature.featureCardContent }}></div> : <></>}

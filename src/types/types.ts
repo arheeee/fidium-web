@@ -150,3 +150,13 @@ export type FaqPageBlocks = {
   accordionButton: AccordionButton;
   accordionGroup: Accordion[];
 };
+
+export type MapLocation = {
+  id: string;
+  title: string;
+  locationStateCode: string | null;
+};
+
+export type MapLocationEntry = {
+  locationsEntries: MapLocation[];
+};

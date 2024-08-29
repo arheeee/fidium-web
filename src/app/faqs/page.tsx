@@ -4,9 +4,11 @@ import { FaqPageEntryData } from "@/types/types";
 import { getFaqPageQuery } from "@/utils/queries";
 import { Metadata } from "next";
 
+export const fetchCache = "force-no-store";
 const getFaqs = async (): Promise<FaqPageEntryData> => {
   const { data } = await client.query({
     query: getFaqPageQuery,
+    fetchPolicy: "no-cache",
   });
 
   return data;

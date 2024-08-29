@@ -28,6 +28,6 @@
       "@base/*": ["./src/base/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/interfaces"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/interfaces", "src/components/map/maptsx"],
   "exclude": ["node_modules"]
 }

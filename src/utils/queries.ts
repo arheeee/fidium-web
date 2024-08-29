@@ -104,9 +104,8 @@ export const getHomePageQuery = gql`
     }
   }
 `;
-
 export const getTestimonialsQuery = gql`
-  query HomePageQuery {
+  {
     entries(section: "homePage") {
       ... on pageEditor_Entry {
         id
@@ -244,7 +243,7 @@ export const getStaticCards = gql`
 `;
 
 // video cards
-export const getVideoCardsQuery = gql`
+export const getVideoCards = gql`
   {
     entries(section: "homePage") {
       ... on pageEditor_Entry {
@@ -261,10 +260,28 @@ export const getVideoCardsQuery = gql`
                 videoCardType
                 videoCardVimeoId
                 videoCardYoutubeId
+                videoCardHtml5Video {
+                  id
+                  url
+                  mimeType
+                  title
+                }
               }
             }
           }
         }
+      }
+    }
+  }
+`;
+
+export const getMapsQuery = gql`
+  {
+    locationsEntries {
+      ... on locationsEditor_Entry {
+        id
+        title
+        locationStateCode
       }
     }
   }

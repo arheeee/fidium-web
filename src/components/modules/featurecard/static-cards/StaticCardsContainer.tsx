@@ -1,6 +1,5 @@
 import { StaticCardsPageBlock, StaticFeatureCtaButton } from "@/interfaces/featurecard/StaticCards";
 import FeatureCardButton from "../FeatureCardButton";
-import { addCssClassToHTMLText } from "@/lib/utils";
 
 const StatiCardsContainer = ({
   children,

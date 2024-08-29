@@ -11,7 +11,7 @@ const StaticCardContent = ({
             <div className="flex items-center justify-start gap-4">
                 <Image 
                     className="mb-4 w-10 h-10 md:w-20 md:h-20 " 
-                    src={process.env.NEXT_PUBLIC_CRAFT_CMS_BASE_PATH + card.staticFeatureIcon[0].url} 
+                    src={card.staticFeatureIcon[0].url} 
                     alt="Card Icon" 
                     width="80" 
                     height="80" 
