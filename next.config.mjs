@@ -2,6 +2,7 @@ import 'dotenv/config';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: "build",
   images: {
     domains: [
       new URL(process.env.NEXT_PUBLIC_CRAFT_CMS_BASE_PATH).hostname
