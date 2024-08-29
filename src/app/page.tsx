@@ -36,7 +36,7 @@ export default function Home() {
         <Button className="temp_button" sx={{ backgroundColor: "#003595" }} variant="contained">Content Block</Button>
         </Link>
       </div>
-      <div className="temp_link">
+      {/* <div className="temp_link">
         <Link href="/expandible-cards">
         <Button className="temp_button" sx={{ backgroundColor: "#003595" }} variant="contained">Expandible Cards</Button>
         </Link>
@@ -45,7 +45,7 @@ export default function Home() {
         <Link href="/testimonials">
         <Button className="temp_button" sx={{ backgroundColor: "#003595" }} variant="contained">Testimonials</Button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }
