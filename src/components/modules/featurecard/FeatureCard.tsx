@@ -31,7 +31,7 @@ const FeatureCard = ({
         <div className="my-5 text-center md:text-start">{titleDescription}</div>
         {
           showButton ? <div className="card-actions justify-center md:justify-start" >
-            <FeatureCardButton textButton={buttonText} isButtonOutLine={isButtonOutLine} />
+            <FeatureCardButton textButton={buttonText} buttonType={"primary"} />
           </div> : <div></div>
         }
 
